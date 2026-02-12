@@ -17,13 +17,19 @@ const hasSupabaseConfig = () => {
   return !!(url && key && url.startsWith('https://'));
 };
 
-const hasSimplePasswordConfig = () => !!import.meta.env.VITE_APP_PASSWORD;
+const hasSimplePasswordConfig = () => {
+  try {
+    return !!(import.meta.env.VITE_APP_PASSWORD ?? '');
+  } catch {
+    return false;
+  }
+};
 
 // Supabase 없으면 무조건 비밀번호 게이트, Supabase 있어도 VITE_APP_PASSWORD 있으면 비밀번호 우선
 const usePasswordGate = () => !hasSupabaseConfig() || hasSimplePasswordConfig();
 
 export default function App() {
-  const [simpleAuth] = useState(usePasswordGate());
+  const [simpleAuth] = useState(() => usePasswordGate());
   const [authState, setAuthState] = useState(() => {
     if (usePasswordGate()) return AUTH_LOGGED_OUT;
     if (hasSupabaseConfig()) return AUTH_LOADING;

@@ -102,10 +102,18 @@ export default function SimpleLogin({ onSuccess, mode }) {
     <div style={sty.page}>
       <div style={sty.card}>
         <h1 style={sty.title}>기업의별 HR 대시보드</h1>
-        <p style={sty.subtitle}>
-          {isNoPassword
-            ? '비밀번호가 설정되지 않았습니다. Vercel 프로젝트 설정 → Environment Variables에서 VITE_APP_PASSWORD를 추가한 뒤 재배포해 주세요.'
-            : '비밀번호를 입력하면 대시보드를 조회할 수 있습니다.'}
+        <p style={{ ...sty.subtitle, lineHeight: 1.6 }}>
+          {isNoPassword ? (
+            <>
+              비밀번호가 설정되지 않았습니다.
+              <br />
+              <strong style={{ color: '#e2e8f0' }}>로컬:</strong> hr-dashboard-deploy 폴더에 <code style={{ background: 'rgba(0,0,0,0.3)', padding: '2px 6px', borderRadius: 4 }}>.env</code> 파일을 만들고 <code style={{ background: 'rgba(0,0,0,0.3)', padding: '2px 6px', borderRadius: 4 }}>VITE_APP_PASSWORD=원하는비밀번호</code> 를 넣은 뒤 서버를 재시작하세요.
+              <br />
+              <strong style={{ color: '#e2e8f0' }}>배포:</strong> Vercel → Environment Variables에 VITE_APP_PASSWORD 추가 후 재배포하세요.
+            </>
+          ) : (
+            '비밀번호를 입력하면 대시보드를 조회할 수 있습니다.'
+          )}
         </p>
         {!isNoPassword && (
           <form onSubmit={handleSubmit}>
