@@ -23,7 +23,15 @@ git remote set-url origin https://github.com/hongik423/star-eva-hr-dashboard.git
 git push -u origin main
 ```
 
-## Vercel 배포
+## Vercel 배포 (GitHub 연동)
 
-- **GitHub 연동**: [Vercel](https://vercel.com) → New Project → GitHub에서 `star-eva-hr-dashboard` 선택 후 Deploy
-- **로컬 배포**: `npx vercel` 실행 후 안내에 따라 진행
+1. GitHub에 저장소를 만들고 `git push`까지 완료한 뒤 진행합니다.
+2. [Vercel](https://vercel.com) 로그인 → **Add New** → **Project**
+3. **Import Git Repository**에서 `hongik423/star-eva-hr-dashboard` 선택
+4. **Root Directory**를 `hr-dashboard-deploy`로 설정 (Edit 후 입력)
+5. **Deploy** 클릭
+
+이후 GitHub에 push할 때마다 Vercel에서 자동으로 재배포됩니다.
+
+**로컬에서 한 번 배포만 하기**: 터미널에서 `npx vercel login` 후  
+`cd hr-dashboard-deploy` → `npx vercel` 실행
