@@ -1,0 +1,9 @@
+{
+  "name": "202544-star-eva",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix hr-dashboard-deploy",
+    "build": "npm run build --prefix hr-dashboard-deploy",
+    "preview": "npm run preview --prefix hr-dashboard-deploy"
+  }
+}
