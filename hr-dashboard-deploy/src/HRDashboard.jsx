@@ -1136,7 +1136,7 @@ export default function HRDashboard() {
         <div style={{ display:"flex", alignItems:"center", gap:16 }}>
           {/* 로고 영역: 이미지로 교체됨 */}
           <img 
-            src="/logo.png" // ⚠️ 여기에 첨부하신 로고 파일 경로를 입력해주세요 (예: logo.png)
+            src="/bi.png"
             alt="기업의별 로고" 
             style={{ height: 48, width: "auto", objectFit: "contain" }} 
             onError={(e) => {
@@ -1150,7 +1150,7 @@ export default function HRDashboard() {
             <Star fill="currentColor" size={24} />
           </div>
           <div>
-            <h1 style={{ fontSize:18, fontWeight:800, color:"#F1F5F9", margin:0, letterSpacing:-0.5 }}>기업의별 HR 전략 대시보드</h1>
+            <h1 style={{ fontSize:18, fontWeight:800, color:"#FFFFFF", margin:0, letterSpacing:-0.5 }}>기업의별 HR 전략 대시보드</h1>
             <div style={{ fontSize:12, color:"#64748B" }}>2025년 4/4분기 인사평가 결과 · 14명 · 3개 부서</div>
           </div>
         </div>

@@ -19,7 +19,7 @@ const sty = {
     maxWidth: 400,
     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
   },
-  title: { fontSize: 22, fontWeight: 800, color: '#F1F5F9', marginBottom: 8, letterSpacing: -0.5 },
+  title: { fontSize: 22, fontWeight: 800, color: '#FFFFFF', marginBottom: 8, letterSpacing: -0.5 },
   subtitle: { fontSize: 14, color: '#94A3B8', marginBottom: 28 },
   input: {
     width: '100%',
